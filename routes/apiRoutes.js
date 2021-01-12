@@ -4,7 +4,9 @@ var passport = require("../config/passport");
 const path = require('path')
 
 module.exports = function (app) {
-   
+    app.post("/api/login", passport.authenticate("local"), function (req, res) {
+        res.json(req.user);
+    });
     app.post("/api/signup", function (req, res) {
         db.User.create({
             email: req.body.email,
