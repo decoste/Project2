@@ -7,7 +7,7 @@ var isAuthenticated = require("../config/isAuthenticated");
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    // If the user already has an account send them to the home page
+    // If the user already has an account send them to the account page
     if (req.user) {
       res.redirect("/accounts");
     }
@@ -22,13 +22,21 @@ module.exports = function(app) {
   
   });
   app.get("/signup", function(req, res) {
-    // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/signup");
+      res.redirect("/accounts");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   
   });
+
+  app.get("/home", function(req, res) {
+    if (req.user) {
+      res.redirect("/home");
+    }
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  
+  });
+  
   // Here we've add our isAuthenticated to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/accounts", isAuthenticated, function(req, res) {
