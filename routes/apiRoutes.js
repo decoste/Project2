@@ -9,8 +9,15 @@ module.exports = function (app) {
     });
     app.post("/api/signup", function (req, res) {
         db.User.create({
+            firstname: req.body.firstname,
+            lastname: req.body.lastname,
+            address1: req.body.address1,
+            address2: req.body.address2,
+            city: req.body.city,
+            state: req.body.state,
+            zip: req.body.zip,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
         })
             .then(function () {
                 //ref: https://pusher.com/tutorials/http-response-codes-part-2

@@ -1,1 +1,2 @@
+DROP DATABASE IF EXISTS customer_DB;
 CREATE DATABASE customer_DB;
