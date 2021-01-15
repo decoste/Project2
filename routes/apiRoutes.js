@@ -17,6 +17,7 @@ module.exports = function (app) {
             state: req.body.state,
             zip: req.body.zip,
             email: req.body.email,
+            username: req.body.username,
             password: req.body.password,
         })
             .then(function () {
