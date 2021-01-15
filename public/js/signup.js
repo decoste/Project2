@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
   var signUpForm = $(".signup");
+  var usernameInput = $("#username-input");
   var emailInput = $("#email-input");
   var passwordInput = $("#password-input");
   var firstNameInput = $("#firstName-input");
@@ -23,14 +24,15 @@ $(document).ready(function () {
       state: stateInput.val().trim(),
       zip: zipInput.val().trim(),
       email: emailInput.val().trim(),
+      username: usernameInput.val().trim(),
       password: passwordInput.val().trim(),
     };
-    if (!userData.email || !userData.password) {
+    if (!userData.username || !userData.password) {
       return;
     }
     signUpUser(userData.firstname, userData.lastname, userData.address1,
        userData.address2, userData.city, userData.state,
-        userData.zip, userData.email, userData.password);
+        userData.zip, userData.email, userData.username, userData.password);
     firstNameInput.val("");
     lastNameInput.val("");
     address1Input.val("");
@@ -39,11 +41,12 @@ $(document).ready(function () {
     stateInput.val("");
     zipInput.val("");
     emailInput.val("");
+    usernameInput.val("");
     passwordInput.val("");
   });
 
   //Post to the signup route.
-  function signUpUser(firstname, lastname, address1, address2, city, state, zip, email, password) {
+  function signUpUser(firstname, lastname, address1, address2, city, state, zip, email,username,  password) {
     $.post("/api/signup", {
       firstname: firstname,
       lastname: lastname,
@@ -53,6 +56,7 @@ $(document).ready(function () {
       state: state,
       zip: zip,
       email: email,
+      username: username,
       password: password
     })
       .then(function (data) {
