@@ -116,38 +116,40 @@ module.exports = function (sequelize, DataTypes) {
 
         sv_account_number: {
             type: DataTypes.INTEGER,
-            autoIncrement: true,
             unique: true,
-            len: [15]
+            len: {
+                args: [4,14],
+                msg: "String length is not in this range"
+           }
         },
 
-        sv_account_type: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        }, 
+        sv_account_number: {
+            type: DataTypes.INTEGER,
+            unique: true,
+            len: {
+                args: [4,14],
+                msg: "String length is not in this range"
+           }
+        },
 
         sv_account_Balance: {
             type: DataTypes.INTEGER.UNSIGNED,  //123,123,123,123.00
-            autoIncrement: true,
             decimal: [10,2],
             created_at: sequelize.date, 
         },
 
         ck_account_number: {
             type: DataTypes.INTEGER,
-            autoIncrement: true,
             unique: true,
             len: [15],
         },
 
         ck_account_type: {
             type: DataTypes.STRING,
-            allowNull: false,
-        }, 
+        },
 
         ck_account_balance: {
             type: DataTypes.INTEGER.UNSIGNED,  //123,123,123,123.00
-            autoIncrement: true,
             decimal: [10,2], 
             created_at: sequelize.date,
         },
