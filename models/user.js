@@ -62,7 +62,46 @@ module.exports = function (sequelize, DataTypes) {
         password: {
             type: DataTypes.STRING,
             allowNull: false,
-        }
+        },
+
+        sv_account_number: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            unique: true,
+            len: [15]
+        },
+
+        sv_account_type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }, 
+
+        sv_account_Balance: {
+            type: DataTypes.INTEGER.UNSIGNED,  //123,123,123,123.00
+            autoIncrement: true,
+            decimal: [10,2],
+            created_at: sequelize.date, 
+        },
+
+        ck_account_number: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            unique: true,
+            len: [15],
+        },
+
+        ck_account_type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        }, 
+
+        ck_account_balance: {
+            type: DataTypes.INTEGER.UNSIGNED,  //123,123,123,123.00
+            autoIncrement: true,
+            decimal: [10,2], 
+            created_at: sequelize.date,
+        },
+     
     });
     User.prototype.validPassword = function (password) {
         return bcrypt.compareSync(password, this.password)
