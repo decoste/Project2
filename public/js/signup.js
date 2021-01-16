@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var signUpForm = $("signup");
+  var signUpForm = $(".signup");
   var usernameInput = $("#username-input");
   var emailInput = $("#email-input");
   var passwordInput = $("#password-input");
