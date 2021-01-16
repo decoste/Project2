@@ -9,38 +9,37 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // If the user already has an account send them to the account page
     if (req.user) {
-      res.redirect("/accounts");
+      res.redirect("/home");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/home.html"));
+  });
+  app.get("/home", function(req, res) {
+    // If the user already has an account send them to the account page
+   
+    res.sendFile(path.join(__dirname, "../public/home.html"));
   });
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/accounts");
-    }
+   
     res.sendFile(path.join(__dirname, "../public/login.html"));
   
   });
   app.get("/signup", function(req, res) {
-    if (req.user) {
-      res.redirect("/accounts");
-    }
+   
     res.sendFile(path.join(__dirname, "../public/signup.html"));
-  
-  });
-
-  app.get("/home", function(req, res) {
-    if (req.user) {
-      res.redirect("/home");
-    }
-    res.sendFile(path.join(__dirname, "../public/home.html"));
   
   });
   
   // Here we've add our isAuthenticated to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/accounts", isAuthenticated, function(req, res) {
+  app.get("/accounts", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/accounts.html"));
   });
+
+  app.get("/userAccount", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/userAccount.html"));
+  });
+
+ 
   
 };

@@ -123,15 +123,6 @@ module.exports = function (sequelize, DataTypes) {
            }
         },
 
-        sv_account_number: {
-            type: DataTypes.INTEGER,
-            unique: true,
-            len: {
-                args: [4,14],
-                msg: "String length is not in this range"
-           }
-        },
-
         sv_account_Balance: {
             type: DataTypes.INTEGER.UNSIGNED,  //123,123,123,123.00
             decimal: [10,2],
