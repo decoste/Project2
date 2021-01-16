@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   var signUpForm = $(".signup");
   var usernameInput = $("#username-input");
   var emailInput = $("#email-input");
@@ -30,9 +29,18 @@ $(document).ready(function () {
     if (!userData.username || !userData.password) {
       return;
     }
-    signUpUser(userData.firstname, userData.lastname, userData.address1,
-       userData.address2, userData.city, userData.state,
-        userData.zip, userData.email, userData.username, userData.password);
+    signUpUser(
+      userData.firstname,
+      userData.lastname,
+      userData.address1,
+      userData.address2,
+      userData.city,
+      userData.state,
+      userData.zip,
+      userData.email,
+      userData.username,
+      userData.password
+    );
     firstNameInput.val("");
     lastNameInput.val("");
     address1Input.val("");
@@ -43,10 +51,29 @@ $(document).ready(function () {
     emailInput.val("");
     usernameInput.val("");
     passwordInput.val("");
+
+    //Onclick event for sign up to Generate an account number.
+    $(document).on("submit", ".signup", createAccountNum);
+
+    function createAccountNum() {
+      console.log(Math.floor(1000000000 + Math.random() * 9000000000));
+    }
+    // Post this to DB
   });
 
   //Post to the signup route.
-  function signUpUser(firstname, lastname, address1, address2, city, state, zip, email,username,  password) {
+  function signUpUser(
+    firstname,
+    lastname,
+    address1,
+    address2,
+    city,
+    state,
+    zip,
+    email,
+    username,
+    password
+  ) {
     $.post("/api/signup", {
       firstname: firstname,
       lastname: lastname,
@@ -57,7 +84,7 @@ $(document).ready(function () {
       zip: zip,
       email: email,
       username: username,
-      password: password
+      password: password,
     })
       .then(function (data) {
         window.location.replace("/");

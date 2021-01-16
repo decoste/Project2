@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
   var loginForm = $(".login");
   var usernameInput = $("#username-input");
   var passwordInput = $("#password-input");
@@ -9,11 +8,11 @@ $(document).ready(function () {
     event.preventDefault();
     var userData = {
       username: usernameInput.val().trim(),
-      password: passwordInput.val().trim()
+      password: passwordInput.val().trim(),
     };
 
     if (!userData.username || !userData.password) {
-      alert("Invalid Username or Password")
+      alert("Invalid Username or Password");
       return;
     }
 
@@ -27,7 +26,7 @@ $(document).ready(function () {
   function loginUser(username, password) {
     $.post("/api/login", {
       username: username,
-      password: password
+      password: password,
     })
       .then(function () {
         window.location.replace("/accounts");
