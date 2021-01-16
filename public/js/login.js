@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var loginForm = $(".login");
+  var loginForm = $("#login");
   var usernameInput = $("#username-input");
   var passwordInput = $("#password-input");
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
       password: password,
     })
       .then(function () {
-        window.location.href="/userAccount";
+        window.location.href = "/userAccount";
         // If there's an error, log the error
       })
       .catch(function (err) {

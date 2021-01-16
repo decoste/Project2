@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var signUpForm = $(".signup");
+  var signUpForm = $("signup");
   var usernameInput = $("#username-input");
   var emailInput = $("#email-input");
   var passwordInput = $("#password-input");
@@ -87,7 +87,7 @@ $(document).ready(function () {
       password: password,
     })
       .then(function (data) {
-        window.location.href= "/login";
+        window.location.href = "/login";
         // Handle it by throwing up an alert
       })
       .catch(handleLoginErr);
