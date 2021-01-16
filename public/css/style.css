@@ -1,0 +1,56 @@
+* {
+    font-family: 'Gill Sans MT', Calibri, Trebuchet MS, sans-serif;
+}
+
+.navbar-text-size {
+    font-size: 22px;
+}
+
+.logo {
+    color: cornflowerblue;
+    font-family: 'Fredoka One', cursive;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.heading {
+    margin-top: 35px;
+    font-family: 'Gill Sans MT', Calibri, Trebuchet MS, sans-serif;
+    color: dimgray;
+    font-size: 50px;
+}
+
+.blue-btn {
+    background-color: rgb(129, 173, 255);
+    color: rgb(51, 51, 51);
+}
+
+.home-btn-width {
+    width: 200px;
+}
+
+.img-margin {
+    margin-top: 15px;
+}
+
+.login {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.width {
+    width: 350px;
+}
+
+.form-margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signUpPrompt {
+    margin-top: 15px;
+}
+
+.details-font-size {
+    font-size: 20px;
+}

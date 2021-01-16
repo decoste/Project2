@@ -4,40 +4,80 @@
     <title>Sign Up</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Materialize CSS link -->
+    <!-- Font Awesome -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
       rel="stylesheet"
     />
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css"
       rel="stylesheet"
     />
-    <link href="css/style.css" rel="stylesheet" />
+    <!-- CSS -->
+    <link href="./css/style.css" rel="stylesheet"/>
   </head>
+  
   <header>
-    <div>
-      <h3>
-        <li><a href="/login">Login</a></li>
-      </h3>
-    </div>
+    <!-- Intro settings -->
+    <style>
+      /* Default height for small devices */
+      #intro-example {
+        height: 400px;
+      }
+
+      /* Height for devices larger than 992px */
+      @media (min-width: 992px) {
+        #intro-example {
+          height: 600px;
+        }
+      }
+    </style>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html"><span class="logo">jwaj</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">            
+              <a class="nav-link navbar-text-size" href="login.html">Login</a>
+              <a class="nav-link navbar-text-size" href="signup.html">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </nav>
   </header>
+ 
+ 
   <br />
   <br />
+  
+  
   <main>
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
-          <h3>Sign Up!</h3>
+          
+          <h2>Welcome!</h2>
+          <p class='details-font-size'>First we'll need a few details:</p>
+
           <form class="signup">
-            <div class="form-group">
-              <label for="exampleInputFirstName">First Name</label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -45,8 +85,7 @@
                 placeholder="First Name"
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputLastName">Last Name</label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -54,8 +93,7 @@
                 placeholder="Last Name"
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputAdress1">Address Line 1 </label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -63,8 +101,7 @@
                 placeholder="Address Line 1 "
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputAddress2">Address Line 2 </label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -72,8 +109,7 @@
                 placeholder="Address Line 2 "
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputCity"> City </label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -81,8 +117,7 @@
                 placeholder="City "
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputState"> State </label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -90,8 +125,7 @@
                 placeholder="State "
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputFirstName"> Zip</label>
+            <div class="form-group form-margin">
               <input
                 type="text"
                 class="form-control"
@@ -99,9 +133,7 @@
                 placeholder="Zip Code"
               />
             </div>
-
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+            <div class="form-group form-margin">
               <input
                 type="email"
                 class="form-control"
@@ -109,17 +141,7 @@
                 placeholder="Email"
               />
             </div>
-            <div class="form-group">
-              <label for="exampleInputUsername1">Username</label>
-              <input
-                type="username"
-                class="form-control"
-                id="username-input"
-                placeholder="Username"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+            <div class="form-group form-margin">
               <input
                 type="password"
                 class="form-control"
@@ -127,20 +149,17 @@
                 placeholder="Password"
               />
             </div>
-            <button type="submit" class="btn btn-default">Sign Up</button>
+            <a href="login.html" class="btn blue-btn btn-block" role="button">Sign Up</a>
           </form>
-          <br />
-          <p>Or log in <a href="/login">here</a></p>
+          <p class="signUpPrompt">Or log in <a href="login.html">here</a>.</p>
         </div>
       </div>
     </div>
   </main>
-  <br />
-  <br />
-  <footer>
-    <div class="footer"></div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js">
+  </script>
   <script src="js/signup.js"></script>
 </html>
