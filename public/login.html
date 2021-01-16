@@ -2,20 +2,28 @@
 <html lang="en">
 
 <head>
-  <title>Login</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Materialize CSS link -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css" rel="stylesheet" />
-  <title>LogIn</title>
-  <link href="css/style.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link href="./css/style.css" rel="stylesheet"/>
+  <title>Login</title>
 </head>
 
 <body>
+
   <header>
     <!-- Intro settings -->
     <style>
@@ -33,71 +41,58 @@
     </style>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
-          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="home.html"><span class="logo">jwaj</span></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-mdb-toggle="collapse"
+          data-mdb-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarExample01">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="/home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-          </ul>
+        
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">            
+              <a class="nav-link navbar-text-size" href="login.html">Login</a>
+              <a class="nav-link navbar-text-size" href="signup.html">Sign Up</a>
+          </div>
         </div>
       </div>
     </nav>
-    <!-- Navbar -->
-    <!-- Background image -->
-    <div id="intro-example" class="p-5 text-center bg-image" style="
-          background-image: image(
-            './images/micheile-henderson-ZVprbBmT8QA-unsplash.jpg'
-          );
-        ">
-      <div class="mask" style="background-color: rgba(0, 0, 0, 0.7)">
-        <div class="d-flex justify-content-center align-items-center h-100">
-          <div class="text-white">
-            <h1 class="mb-3">
-              Log in
-            </h1>
-            <br>
-            <br>
-            <form class="login">
-              <div class="form-group">
-                <label for="exampleInputUsername1">Username</label>
-                <input type="username" class="form-control" id="username-input" placeholder="Username" />
-              </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="password-input" placeholder="Password" />
-              </div>
-              <button type="submit" class="btn btn-default text-white">Login</button>
-              <br>
-              <br>
-              <p>Or sign up <a href="/signup">here</a></p>
-          </div>
+  </header>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div class="width">
+          <h1 class="login">
+            Log in
+          </h1>
+          <form>
+            <div class="form-group">
+              <input type="username" class="form-control form-margin" id="username-input" placeholder="Username" />
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control form-margin" id="password-input" placeholder="Password" />
+            <button type="submit" class="btn blue-btn btn-block">Login</button>
+            <p class="signUpPrompt">Or sign up <a href="signup.html">here</a>.</p>
           </form>
-
         </div>
       </div>
-      <!-- Background image -->
-  </header>
+    </div>
+  </div>  
+
 </body>
 
-<footer>
-  <div class="footer"></div>
-</footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js">
+</script>
 <script src="js/login.js"></script>
 
 </html>

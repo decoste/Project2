@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,17 +10,19 @@
       rel="stylesheet"
     />
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
     <!-- MDB -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.css"
       rel="stylesheet"
     />
-    <title>Home Screen</title>
+    <!-- CSS -->
+    <link href="./css/style.css" rel="stylesheet"/>
+    
+    <title>Home</title>
   </head>
+  
   <body>
     <header>
       <!-- Intro settings -->
@@ -38,79 +41,49 @@
       </style>
 
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
+          <a class="navbar-brand" href="#"><span class="logo">jwaj</span></a>
           <button
             class="navbar-toggler"
             type="button"
             data-mdb-toggle="collapse"
-            data-mdb-target="#navbarExample01"
-            aria-controls="navbarExample01"
+            data-mdb-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <i class="fas fa-bars"></i>
           </button>
-          <div class="collapse navbar-collapse" id="navbarExample01">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item active">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <!-- Navbar -->
-
-      <!-- Background image -->
-      <div
-        id="intro-example"
-        class="p-5 text-center bg-image"
-        style="
-          background-image: image(
-            './images/micheile-henderson-ZVprbBmT8QA-unsplash.jpg'
-          );
-        "
-      >
-        <div class="mask" style="background-color: rgba(0, 0, 0, 0.7)">
-          <div class="d-flex justify-content-center align-items-center h-100">
-            <div class="text-white">
-              <h1 class="mb-3">Welcome to JAJWA Banking App</h1>
-              <h5 class="mb-4">
-                Creating an Account with us couldnt be easier!
-              </h5>
-              <a
-                class="btn btn-outline-light btn-lg m-2"
-                href="/accounts"
-                role="button"
-                rel="nofollow"
-                >Create Account</a
-              >
-              <a
-                class="btn btn-outline-light btn-lg m-2"
-                href="/login"
-               
-                role="button"
-                >Login</a
-              >
+          
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">            
+                <a class="nav-link navbar-text-size" href="login.html">Login</a>
+                <a class="nav-link navbar-text-size" href="signup.html">Sign Up</a>
             </div>
           </div>
         </div>
-      </div>
-      <!-- Background image -->
+      </nav>
     </header>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <p class="heading">Welcome to easy to use online banking!</p>
+            <a href="signup.html" class="btn blue-btn btn-rounded btn-lg home-btn-width" role="button">Sign Up</a>
+        </div>
+        <div class="col-md-6">
+          <!-- Free Image from https://www.hiclipart.com/free-transparent-background-png-clipart-dagqx -->
+          <img class="img-fluid img-margin" src="assets/images/open-banking-financial-technology-finance-financial-services-lays-dd7d5386abc311f2ccf635a4f5480906.png" alt="bank-collage-image"/>
+        </div>
+      </div>
+    </div>
+
   </body>
+  
   <script
     type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"
-  ></script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js">
+  </script>
+
 </html>
