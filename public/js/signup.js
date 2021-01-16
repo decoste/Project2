@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var signUpForm = $("signup");
+  var signUpForm = $(".signup");
   var usernameInput = $("#username-input");
   var emailInput = $("#email-input");
   var passwordInput = $("#password-input");
@@ -11,7 +11,7 @@ $(document).ready(function () {
   var stateInput = $("#state-input");
   var zipInput = $("#zip-input");
 
-  //  validate the email and password when sign up
+  //  validate the email and password when sign ups
   signUpForm.on("submit", function (event) {
     event.preventDefault();
     var userData = {
