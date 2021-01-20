@@ -117,7 +117,36 @@ module.exports = function (sequelize, DataTypes) {
       isDecimal: true,
       max: 20,
       min: 8,
-    } 
+    } ,
+    sv_account_number: {
+      type: DataTypes.INTEGER,
+      unique: true,
+  },
+  sv_account_type: {
+      type: DataTypes.INTEGER,
+      unique: true,
+  },
+  sv_account_Balance: {
+      type: DataTypes.INTEGER.UNSIGNED,  
+      decimal: [10,2],
+      created_at: sequelize.date, 
+      updated_at: sequelize.date,
+  },
+  dda_account_number: {
+      type: DataTypes.INTEGER,
+      unique: true,
+      len: [10],
+  // JSG - we want the Account to Auto Generate
+  },
+  dda_account_type: {
+      type: DataTypes.INTEGER,
+  },
+  dda_account_balance: {
+      type: DataTypes.INTEGER.UNSIGNED,  
+      decimal: [10,2], 
+      created_at: sequelize.date,
+      updated_at: sequelize.date,
+  }
   });
 
   User.prototype.validPassword = function (password) {
