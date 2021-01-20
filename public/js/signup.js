@@ -53,11 +53,7 @@ $(document).ready(function () {
     passwordInput.val("");
 
     //Onclick event for sign up to Generate an account number.
-    $(document).on("submit", ".signup", createAccountNum);
 
-    function createAccountNum() {
-      console.log(Math.floor(1000000000 + Math.random() * 9000000000));
-    }
     // Post this to DB
   });
 
