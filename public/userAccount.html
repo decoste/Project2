@@ -46,7 +46,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="home.html"
-            ><span class="logo">jwaj</span></a
+            ><span class="logo">jwaj Banking</span></a
           >
           <button
             class="navbar-toggler"
@@ -60,28 +60,47 @@
             <i class="fas fa-bars"></i>
           </button>
 
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <!-- <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
               <a class="nav-link navbar-text-size" href="login.html">Login</a>
               <a class="nav-link navbar-text-size" href="signup.html"
                 >Sign Up</a
               >
             </div>
-          </div>
+          </div> -->
         </div>
       </nav>
     </header>
-
+    
     <div class="sidenav">
       <a href="#">Accounts</a>
-      <a href="#">Transactions</a>
+      <a href="#">Transactions</a> 
+      <a href="#">Finance</a>
       <a href="#">Settings</a>
-      <a href="#">Forecasts</a>
+      <a href="#">Logout</a>
     </div>
-
-    <div class="main">
-      <h1>Welcome!</h1>
-      <p>Here's where more info will go!</p>
+    <h1 class="text-center">Welcome!</h1>
+    <div class="container-sm">
+      <dibv class="row">
+        <div class="col-sm8 col-sm-offset-2">
+          <div class="card">
+            <h5 class="card-header">Current Account info</h5>
+            <div class="card-body">
+              <table id="current-account" class="table">
+                <thread>
+                  <tr>
+                    <th id="account-number" scope="col">Account Number</th>
+                    <th id="deposit-amount"scope="col">Last Deposit Amount</th>
+                    <th id="last-withdrawal"scope="col">Last Withdrawal</th>
+                    <th id="current-balance" scope="col">Current Balance</th>
+                  </tr>
+                </thread>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <script
@@ -89,4 +108,5 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.0.0/mdb.min.js"
   ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
 </html>
