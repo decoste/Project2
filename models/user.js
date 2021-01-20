@@ -123,42 +123,58 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.INTEGER,
       unique: true,
       len: {
-        args: [4, 14],
-        msg: "String length is not in this range",
-      },
+          args: [4,14],
+          msg: "String length is not in this range"
+      }
     },
-
-    sv_account_number: {
-      type: DataTypes.INTEGER,
-      unique: true,
-      len: {
-        args: [4, 14],
-        msg: "String length is not in this range",
-      },
+    sv_account_type: {
+        type: DataTypes.INTEGER,
+        unique: true,
+        len: {
+            args: [4,14],
+            msg: "String length is not in this range"
+        }
     },
-
     sv_account_Balance: {
-      type: DataTypes.INTEGER.UNSIGNED, //123,123,123,123.00
-      decimal: [10, 2],
-      created_at: sequelize.date,
+        type: DataTypes.INTEGER.UNSIGNED,  
+        decimal: [10,2],
+        created_at: sequelize.date, 
+        updated_at: sequelize.date,
     },
 
-    ck_account_number: {
-      type: DataTypes.INTEGER,
-      unique: true,
-      len: [15],
+      dda_account_number: {
+        type: DataTypes.INTEGER,
+        unique: true,
+        len: [10],
+    // JSG - we want the Account to Auto Generate
     },
-
-    ck_account_type: {
+    dda_account_type: {
       type: DataTypes.STRING,
     },
 
-    ck_account_balance: {
-      type: DataTypes.INTEGER.UNSIGNED, //123,123,123,123.00
-      decimal: [10, 2],
+    dda_account_balance: {
+      type: DataTypes.INTEGER.UNSIGNED,  
+      decimal: [10,2], 
       created_at: sequelize.date,
+      updated_at: sequelize.date,
     },
+
+    deposit: {
+      type: DataTypes.INTIGER,
+    },
+    //WD  (-) from account 
+    withdrawal: {
+        type: DataTypes.INTIGER,
+    },
+    //transfer (-)from account (+)to account 
+    transfer: {
+        type: DataTypes.INTIGER,
+    }, 
+      // deducts from acct (-) moves out of bank
+      // wiretransfer: {
+      //}, 
   });
+
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
