@@ -117,48 +117,38 @@ module.exports = function (sequelize, DataTypes) {
       isDecimal: true,
       max: 20,
       min: 8,
-    },
-
+    } ,
     sv_account_number: {
       type: DataTypes.INTEGER,
       unique: true,
-      len: {
-        args: [4, 14],
-        msg: "String length is not in this range",
-      },
-    },
-
-    sv_account_number: {
+  },
+  sv_account_type: {
       type: DataTypes.INTEGER,
       unique: true,
-      len: {
-        args: [4, 14],
-        msg: "String length is not in this range",
-      },
-    },
-
-    sv_account_Balance: {
-      type: DataTypes.INTEGER.UNSIGNED, //123,123,123,123.00
-      decimal: [10, 2],
-      created_at: sequelize.date,
-    },
-
-    ck_account_number: {
+  },
+  sv_account_Balance: {
+      type: DataTypes.INTEGER.UNSIGNED,  
+      decimal: [10,2],
+      created_at: sequelize.date, 
+      updated_at: sequelize.date,
+  },
+  dda_account_number: {
       type: DataTypes.INTEGER,
       unique: true,
-      len: [15],
-    },
-
-    ck_account_type: {
-      type: DataTypes.STRING,
-    },
-
-    ck_account_balance: {
-      type: DataTypes.INTEGER.UNSIGNED, //123,123,123,123.00
-      decimal: [10, 2],
+      len: [10],
+  // JSG - we want the Account to Auto Generate
+  },
+  dda_account_type: {
+      type: DataTypes.INTEGER,
+  },
+  dda_account_balance: {
+      type: DataTypes.INTEGER.UNSIGNED,  
+      decimal: [10,2], 
       created_at: sequelize.date,
-    },
+      updated_at: sequelize.date,
+  }
   });
+
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
