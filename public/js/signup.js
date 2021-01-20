@@ -11,7 +11,7 @@ $(document).ready(function () {
   var stateInput = $("#state-input");
   var zipInput = $("#zip-input");
 
-  //  validate the email and password when sign up
+  //  validate the email and password when sign ups
   signUpForm.on("submit", function (event) {
     event.preventDefault();
     var userData = {
