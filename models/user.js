@@ -160,15 +160,15 @@ module.exports = function (sequelize, DataTypes) {
     },
 
     deposit: {
-      type: DataTypes.INTIGER,
+      type: DataTypes.INTEGER,
     },
     //WD  (-) from account 
     withdrawal: {
-        type: DataTypes.INTIGER,
+        type: DataTypes.INTEGER,
     },
     //transfer (-)from account (+)to account 
     transfer: {
-        type: DataTypes.INTIGER,
+        type: DataTypes.INTEGER,
     }, 
       // deducts from acct (-) moves out of bank
       // wiretransfer: {
