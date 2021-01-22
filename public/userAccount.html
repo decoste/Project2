@@ -71,9 +71,9 @@
     
     <div class="sidenav">
       <a href="#">Accounts</a>
-      <a href="transactions.html">Transactions</a> 
+     <!-- <a href="transactions.html">Transactions</a> 
       <a href="finance.html">Finance</a>
-      <a href="settings.html">Settings</a>
+      <a href="settings.html">Settings</a>-->
       <a href="logout.html">Logout</a>
     </div>
 
@@ -91,15 +91,15 @@
                     <thread>
                       <tr>
                         <th id="account-number" scope="col">Account Number</th>
-                        <th id="deposit-amount"scope="col">Last Deposit Amount</th>
-                        <th id="last-withdrawal"scope="col">Last Withdrawal</th>
+                       <!-- <th id="deposit-amount"scope="col">Last Deposit Amount</th>
+                        <th id="last-withdrawal"scope="col">Last Withdrawal</th>-->
                         <th id="current-balance" scope="col">Current Balance</th>
                       </tr>
                       <tr>
                         <td id="id"></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                       <!-- <td></td>
+                        <td id=withdraw></td>-->
+                        <td id="balance"></td>
                       </tr>
                     </thread>
                     <tbody></tbody>
@@ -121,7 +121,6 @@
                   <div class="col-sm-6">
                     <div class="form-group trans-fields">
                       <input
-                        type="number"
                         class="form-control"
                         id="deposit-amount"
                         placeholder="Deposit Amount"
@@ -136,7 +135,6 @@
                   <div class="col-sm-6">
                     <div class="form-group trans-field-width trans-fields">
                       <input
-                        type="number"
                         class="form-control"
                         id="withdrawal-amount"
                         placeholder="Withdrawal Amount"

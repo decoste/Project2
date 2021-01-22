@@ -18,6 +18,13 @@ const { validateSubfields } = require("sequelize-validate-subfields");
 
 module.exports = function (sequelize, DataTypes) {
     var Transactions = sequelize.define("Transactions", {
+        id: {
+            primaryKey: true,
+            type: DataTypes.UUID,
+            primaryKey: true,
+            allowNull: false,
+            defaultValue: DataTypes.UUIDV1
+          },
     transaction_Type: {
         type: DataTypes.STRING,  
         /*choice:[
@@ -44,7 +51,7 @@ module.exports = function (sequelize, DataTypes) {
 Transactions.associate = function(models) {
     // This is linking to the Unq ID of the account number in the Checking and the savings
     Transactions.belongsTo(models.Accounts, {
-      foreignKey: "accounts_number"
+     
     });
 
 Transactions.prototype.validPassword = function (password) {
