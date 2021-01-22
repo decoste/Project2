@@ -2,11 +2,13 @@ var db = require("../models");
 var passport = require("../config/passport");
 
 const path = require('path')
+const { v4: uuidv4 } = require('uuid');
 
 module.exports = function (app) {
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
         res.json(req.user);
     });
+    let newId = uuidv4();
     app.post("/api/signup", function (req, res) {
         db.User.create({
             firstname: req.body.firstname,
@@ -19,6 +21,7 @@ module.exports = function (app) {
             email: req.body.email,
             username: req.body.username,
             password: req.body.password,
+            id: newId
         })
             .then(function () {
                 //ref: https://pusher.com/tutorials/http-response-codes-part-2
@@ -33,6 +36,18 @@ module.exports = function (app) {
     app.get("/logout", function (req, res) {
         req.logout();
         res.redirect("/login");
+    });
+
+    app.get("/api/user_data", (req, res) => {
+      if (!req.user) {
+        // The user is not logged in, send back an empty object
+        res.json({});
+      } else {
+        res.json({
+          firstname: req.user.firstname,
+          id:req.user.id
+        });
+      }
     });
 
 }

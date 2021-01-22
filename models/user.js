@@ -3,6 +3,10 @@ const { validateSubfields } = require("sequelize-validate-subfields");
 
 module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
+    id: {
+      primaryKey: true,
+      type: DataTypes.UUID
+    },
     firstname: {
       type: DataTypes.STRING,
       validate: {
