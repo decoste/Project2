@@ -83,7 +83,7 @@ $(document).ready(function () {
       password: password,
     })
       .then(function (data) {
-        window.location.href = "/login";
+        window.location.href = "/thanks";
         // Handle it by throwing up an alert
       })
       .catch(handleLoginErr);
