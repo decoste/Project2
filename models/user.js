@@ -5,7 +5,10 @@ module.exports = function (sequelize, DataTypes) {
   var User = sequelize.define("User", {
     id: {
       primaryKey: true,
-      type: DataTypes.UUID
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV1,
+      primaryKey: true,
+      allowNull: false,
     },
     firstname: {
       type: DataTypes.STRING,
@@ -123,6 +126,15 @@ module.exports = function (sequelize, DataTypes) {
       min: 8,
     } ,
   });
+
+  User.associate = function(models) {
+    User.hasOne(models.Accounts, {
+      foreignKey:{
+      
+        type: DataTypes.UUID
+      }
+    });
+  };
 
   User.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
