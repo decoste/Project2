@@ -22,7 +22,7 @@ The Heruko deployed site: https://jwajbank.herokuapp.com/userAccount
 
 The following GIF demonstrates the application functionality:
 
-![team profile generator demo](....)
+![Project 2 - Demo](https://user-images.githubusercontent.com/30843888/105615642-5a88d700-5da0-11eb-8b81-5d915716baad.gif)
 
 ## Installation
 
