@@ -16,14 +16,25 @@ This app is an easy to use online banking app featuring a log in function and se
 
 Here is the Github repository: https://github.com/decoste/project2/
 
-And the deployed site can be seen on Heruko: https://jwaj.herokuapp.com/
+
+The Heruko deployed site: https://jwajbank.herokuapp.com/userAccount
+
 
 The following GIF demonstrates the application functionality:
 
 ![team profile generator demo](....)
 
 ## Installation
-To use the app you can see it live on this Heroku link: https://jwaj.herokuapp.com/
+
+https://jwajbank.herokuapp.com/userAccount
+
+## Table of Contents
+  * [Installation](#installation)
+  * [Questions](#questions)
+  * [License](#license)
+
+## License
+MIT license
 
 ## Questions
 The following is our Github accounts:

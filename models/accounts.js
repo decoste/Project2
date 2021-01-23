@@ -30,10 +30,8 @@ module.exports = function (sequelize, DataTypes) {
         ],*/
     },
     account_Balance: {
-        type: DataTypes.INTEGER.UNSIGNED,  
-        decimal: [10,2],
-        created_at: sequelize.date, 
-        updated_at: sequelize.date,
+        type: DataTypes.FLOAT,  
+        defaultValue: 0
     },
     account_number: {
         type: DataTypes.INTEGER,

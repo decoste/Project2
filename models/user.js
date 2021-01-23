@@ -122,8 +122,10 @@ module.exports = function (sequelize, DataTypes) {
       isLowercase: true,
       isUpperCase: true,
       isDecimal: true,
-      max: 20,
-      min: 8,
+      len: {
+        args: [6, 14],
+        msg: "String length is not in this range",
+      },
     } ,
   });
 

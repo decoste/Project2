@@ -7,9 +7,10 @@ const { v4: uuidv4 } = require('uuid');
 module.exports = function (app) {
     app.post("/api/login", passport.authenticate("local"), function (req, res) {
         res.json(req.user);
+        console.log(req.user, "This is API login")
     });
-    let newId = uuidv4();
     app.post("/api/signup", function (req, res) {
+    let newId = uuidv4();
         db.User.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
@@ -51,16 +52,21 @@ module.exports = function (app) {
     });
 
     app.get('/api/user_data/balance', (req, res) => {
-      var query = {};
-      if (req.query.UserId) {
-        query.id = req.query.UserId;
+      console.log(req.user.id)
+      if (req.user.id) {
+        db.Accounts.findAll({
+         where: {
+           UserId : req.user.id
+         },
+          include: [db.User]
+        }).then(function(dbAccounts) {
+          console.log(dbAccounts, "DB_ACCOUNTS")
+          res.json({balance: dbAccounts[0].account_Balance});
+        });
+      } else {
+        res.status(401);
       }
-      db.Accounts.findAll({
-        where: query,
-        include: [db.User]
-      }).then(function(dbAccounts) {
-        res.json(dbAccounts);
-      });
+     
     }); 
 
     app.get("/api/user_data/balance/:id", function(req, res) {

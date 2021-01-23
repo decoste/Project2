@@ -1,30 +1,31 @@
 // Requiring our models and passport as we've configured it
-const db = require("../models/accounts");
+const db = require("../models");
 const passport = require("../config/passport");
-const accounts = require("../models/accounts");
 
 module.exports = function(app) {
  
-    app.get('/api/user_data/balance', (req, res) => {
-        var query = {};
-        if (req.query.UserId) {
-          query.id = req.query.UserId;
-        }
-        db.Accounts.findAll({
-          where: query,
-          include: [db.User]
-        }).then(function(dbAccounts) {
-          res.json(dbAccounts);
-        });
+      app.post("/api/user_data/balance", function(req, res) {
+        console.log("BALANCE!!!!!", req.body);
+        db.Accounts.update(req.body,
+          {
+            where: {
+              UserId: req.user.id
+            }
+          })
+          .then(function(dbPost) {
+            res.json(dbPost);
+          });
       });
-      app.get("/api/user_data/balance/:id", function(req, res) {
-        db.Accounts.findOne({
-          where: {
-            id: req.params.id
-          },
-          include: [db.User]
-        }).then(function(dbAccounts) {
-          res.json(dbAccounts);
-        });
+      app.post("/api/user_data/balance/withdraw", function(req, res) {
+        console.log("BALANCE!!!!!", req.body);
+        db.Accounts.update(req.body,
+          {
+            where: {
+              UserId: req.user.id
+            }
+          })
+          .then(function(dbPost) {
+            res.json(dbPost);
+          });
       });
 };
