@@ -10,14 +10,14 @@ TBD...
 
 Github repository: https://github.com/decoste/project2/
 
-The Heruko deployed site: https://jwaj.herokuapp.com/
+The Heruko deployed site: https://jwajbank.herokuapp.com/userAccount
 
 The following GIF demonstrates the application functionality:
 
 ![team profile generator demo](....)
 
 ## Installation
-Heroku link: https://jwaj.herokuapp.com/
+https://jwajbank.herokuapp.com/userAccount
 
 ## Table of Contents
   * [Installation](#installation)
