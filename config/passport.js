@@ -5,9 +5,9 @@ var db = require("../models");
 
 //ref: https://code.tutsplus.com/tutorials/using-passport-with-sequelize-and-mysql--cms-27537
 passport.use(new localStrategy(
-    {
-        usernameField: "username"
-    },
+    // {
+    //     usernameField: "username"
+    // },
     function (username, password, done) {
         db.User.findOne({
             where: {
