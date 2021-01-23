@@ -15,7 +15,7 @@ console.log("DATA:" +data)
       withdrawAmount = $("#withdrawal-amount").val().trim(),
         console.log(data.balance + parseFloat(withdrawAmount));
       newBal1 = data.balance - parseFloat(withdrawAmount);
-      $.post("/api/user_data/balance", 
+      $.post("/api/user_data/balance/withdraw", 
       {account_Balance: newBal1})
         .then(function (data) {
           window.location.href = "/userAccount";

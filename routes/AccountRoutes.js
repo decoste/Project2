@@ -16,4 +16,16 @@ module.exports = function(app) {
             res.json(dbPost);
           });
       });
+      app.post("/api/user_data/balance/withdraw", function(req, res) {
+        console.log("BALANCE!!!!!", req.body);
+        db.Accounts.update(req.body,
+          {
+            where: {
+              UserId: req.user.id
+            }
+          })
+          .then(function(dbPost) {
+            res.json(dbPost);
+          });
+      });
 };
